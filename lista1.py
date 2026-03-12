@@ -766,46 +766,7 @@ def verificarDataValida():
 
     print("Data válida.")
 
-# 41.
-# Receba um número até 9 e escreva por extenso.
-# Exemplo: 5 → cinco
-
-#usando a biblioteca num2words
-def n9ToExtensoNum2Words():
-    from num2words import num2words
-    numero = int(input("Digite um número até 9: "))
-    print(num2words(numero, lang='pt_BR'))
-
-
-#versão com cadeia de if/elif/else
-def n9ToExtensoIfElse():
-    numero = int(input("Digite um número até 9: "))
-    if numero < 0 or numero > 9:
-        print("Fora do intervalo permitido.")
-    if numero == 0:
-        print("zero")
-    elif numero == 1:
-        print("um")
-    elif numero == 2:
-        print("dois")
-    elif numero == 3:
-        print("três")
-    elif numero == 4:
-        print("quatro")
-    elif numero == 5:
-        print("cinco")
-    elif numero == 6:
-        print("seis")
-    elif numero == 7:
-        print("sete")
-    elif numero == 8:
-        print("oito")
-    else:
-        print("nove")
-
-
-#versao com duas funcoes, sendo uma delas um dicionario
-
+#funcao q eu criei para resolver de um outro jeito os exercicios abaixo
 def numero_por_extenso(num: int) -> str:
     if num < 0:
         return "menos " + numero_por_extenso(-num)
@@ -850,6 +811,47 @@ def numero_por_extenso(num: int) -> str:
         partes.append(unidades[num])
 
     return " ".join(partes)
+
+# 41.
+# Receba um número até 9 e escreva por extenso.
+# Exemplo: 5 → cinco
+
+#usando a biblioteca num2words
+def n9ToExtensoNum2Words():
+    from num2words import num2words
+    numero = int(input("Digite um número até 9: "))
+    print(num2words(numero, lang='pt_BR'))
+
+
+#versão com cadeia de if/elif/else
+def n9ToExtensoIfElse():
+    numero = int(input("Digite um número até 9: "))
+    if numero < 0 or numero > 9:
+        print("Fora do intervalo permitido.")
+    if numero == 0:
+        print("zero")
+    elif numero == 1:
+        print("um")
+    elif numero == 2:
+        print("dois")
+    elif numero == 3:
+        print("três")
+    elif numero == 4:
+        print("quatro")
+    elif numero == 5:
+        print("cinco")
+    elif numero == 6:
+        print("seis")
+    elif numero == 7:
+        print("sete")
+    elif numero == 8:
+        print("oito")
+    else:
+        print("nove")
+
+
+
+
 def n9ToExtenso2Func():
     numero = int(input("Digite um número até 9: "))
     if numero < 0 or numero > 9:
