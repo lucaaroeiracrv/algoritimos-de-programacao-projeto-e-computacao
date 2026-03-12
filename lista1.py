@@ -1,5 +1,6 @@
 # Lista de Exercícios (Python) – if e try
 
+
 # 1.
 # Faça uma função em Python que solicite a digitação de dois valores quaisquer,
 # informando-os em seguida em ordem crescente.
@@ -491,11 +492,224 @@ def calcularLitrosAguaPorDia():
         L = P * 0.035
         print(f"Você deveria beber {L} litros de água por dia.")
 
-#30.2 
-#Faça uma função que resolva uma equação de 2º grau.
-#Forma: AX² + BX + C = 0
-#Entradas: A, B e C
-#fiquei mt tempo pq confundi sqrt da biblioteca math com str, fui muleke, NAO CONFUNDIR MAIS
+# Programas com menu
+
+# 31.
+# Faça uma função com menu que reúna os exercícios 4 a 15 (conversões de temperatura).
+def menuConversaoTemperatura():
+    while True:
+        print("\n=== MENU DE CONVERSÃO DE TEMPERATURA ===")
+        print("1. Celsius para Fahrenheit")
+        print("2. Fahrenheit para Celsius")
+        print("3. Celsius para Kelvin")
+        print("4. Kelvin para Celsius")
+        print("5. Celsius para Rankine")
+        print("6. Rankine para Celsius")
+        print("7. Fahrenheit para Kelvin")
+        print("8. Kelvin para Fahrenheit")
+        print("9. Fahrenheit para Rankine")
+        print("10. Rankine para Fahrenheit")
+        print("11. Kelvin para Rankine")
+        print("12. Rankine para Kelvin")
+        print("0. Sair")
+        
+        opcao = input("Escolha uma opção: ")
+        
+        if opcao == "1":
+            celciusToFahrenheit()
+        elif opcao == "2":
+            fahrenheitToCelcius()
+        elif opcao == "3":
+            celciusToKelvin()
+        elif opcao == "4":
+            kelvinToCelcius()
+        elif opcao == "5":
+            celciusToRankine()
+        elif opcao == "6":
+            rankineToCelcius()
+        elif opcao == "7":
+            fahrenheitToKelvin()
+        elif opcao == "8":
+            kelvinToFahrenheit()
+        elif opcao == "9":
+            fahrenheitToRankine()
+        elif opcao == "10":
+            rankineToFahrenheit()
+        elif opcao == "11":
+            kelvinToRankine()
+        elif opcao == "12":
+            rankineToKelvin()
+        elif opcao == "0":
+            print("Saindo do menu...")
+            break
+        else:
+            print("Opção inválida! Tente novamente.")
+
+# 32.
+# Faça uma função com menu que reúna os exercícios 16 a 21 (perímetros).
+def menuPerimetros():
+    while True:
+        print("\n=== MENU DE PERÍMETROS ===")
+        print("1. Perímetro de um Triângulo")
+        print("2. Perímetro de um Quadrado/Losango")
+        print("3. Perímetro de um Retângulo/Paralelogramo")
+        print("4. Perímetro de um Trapézio Isósceles")
+        print("5. Perímetro de um Trapézio Escaleno")
+        print("6. Perímetro de um Polígono Regular")
+        print("7. Perímetro de um Círculo")
+        print("0. Sair")
+        
+        opcao = input("Escolha uma opção: ")
+        
+        if opcao == "1":
+            perimetroTriangulo()
+        elif opcao == "2":
+            perimetroQuadrado()
+        elif opcao == "3":
+            perimetroRetanguloOuParalelogramo()
+        elif opcao == "4":
+            perimetroTrapezioIsoseleces()
+        elif opcao == "5":
+            perimetroTrapezioEscaleno()
+        elif opcao == "6":
+            perimetroPoligonoRegular()
+        elif opcao == "7":
+            perimetroCirculo()
+        elif opcao == "0":
+            print("Saindo do menu...")
+            break
+        else:
+            print("Opção inválida! Tente novamente.")
+
+# 33.
+# Faça uma função com menu que reúna os exercícios 22 a 28 (áreas).
+def menuAreas():
+    while True:
+        print("\n=== MENU DE ÁREAS ===")
+        print("1. Área de um Triângulo")
+        print("2. Área de um Quadrado")
+        print("3. Área de um Retângulo")
+        print("4. Área de um Losango")
+        print("5. Área de um Trapézio")
+        print("6. Área de um Polígono Regular")
+        print("7. Área de um Círculo")
+        print("0. Sair")
+        
+        opcao = input("Escolha uma opção: ")
+        
+        if opcao == "1":
+            areaTriangulo()
+        elif opcao == "2":
+            areaQuadrado()
+        elif opcao == "3":
+            areaRetangulo()
+        elif opcao == "4":
+            areaLosango()
+        elif opcao == "5":
+            areaTrapezio()
+        elif opcao == "6":
+            areaPoligonoRegular()
+        elif opcao == "7":
+            areaCirculo()
+        elif opcao == "0":
+            print("Saindo do menu...")
+            break
+        else:
+            print("Opção inválida! Tente novamente.")
+
+# Valelifações
+
+# 34.elif Crie uma função que receba horas, minutos e segundos
+# e veique se formam um horário válido.
+def verifcarHorarioValido():
+    horas = int(input("Digite as horas: "))
+    minutos = int(input("Digite os minutos: "))
+    segundos = int(input("Digite os segundos: "))
+
+    if 0 <= horas <= 23 and 0 <= minutos <= 59 and 0 <= segundos <= 59:
+        print("Horário válido.")
+    else:
+        print("Horário inválido.")    
+
+# Faça um relogio que funciona e e atualizado em tempo real no terminal
+def relogio():
+    import time
+    
+    while True:
+        print(time.strftime("%H:%M:%S"), end="\r")
+        time.sleep(1)
+        
+
+# 35.
+# Crie uma função que receba 3 segmentos de reta
+# e verifique se podem formar um triângulo.
+def verificarSeFormarTrianguloComSegmentos():
+    a = float(input("Digite o comprimento do primeiro segmento: "))
+    b = float(input("Digite o comprimento do segundo segmento: "))
+    c = float(input("Digite o comprimento do terceiro segmento: "))
+
+    if a + b > c and a + c > b and b + c > a:
+        print("Os segmentos podem formar um triângulo.")
+    else:
+        print("Os segmentos não podem formar um triângulo.")
+
+
+# 36.
+# Se puder formar um triângulo, classifique:
+# Equilátero (3 lados iguais)
+# Isósceles (2 lados iguais)
+# Escaleno (todos diferentes)
+
+def classificarTriangulo():
+    a = float(input("Digite o comprimento do primeiro lado: "))
+    b = float(input("Digite o comprimento do segundo lado: "))
+    c = float(input("Digite o comprimento do terceiro lado: "))
+
+    if a == b == c:
+        print("O triângulo é equilátero.")
+    elif a == b or a == c or b == c:
+        print("O triângulo é isósceles.")
+    else:
+        print("O triângulo é escaleno.")
+
+# 37.
+# Verifique se 3 ângulos podem formar um triângulo.
+def verificarSeFormarTrianguloComAngulos():
+    angulo1 = float(input("Digite o primeiro ângulo: "))
+    angulo2 = float(input("Digite o segundo ângulo: "))
+    angulo3 = float(input("Digite o terceiro ângulo: "))
+
+    if angulo1 + angulo2 + angulo3 == 180:
+        print("Os ângulos podem formar um triângulo.")
+    else:
+        print("Os ângulos não podem formar um triângulo.")
+
+
+# 38.
+# Classifique o triângulo pelos ângulos:
+# Acutângulo (todos < 90°)
+# Retângulo (um = 90°)
+# Obtusângulo (um > 90°)
+def classificarTrianguloPorAngulos():
+    angulo1 = float(input("Digite o primeiro ângulo: "))
+    angulo2 = float(input("Digite o segundo ângulo: "))
+    angulo3 = float(input("Digite o terceiro ângulo: "))
+
+    if angulo1 < 90 and angulo2 < 90 and angulo3 < 90:
+        print("O triângulo é acutângulo.")
+    elif angulo1 == 90 or angulo2 == 90 or angulo3 == 90:
+        print("O triângulo é retângulo.")
+    else:
+        print("O triângulo é obtusângulo.")
+
+# 39.
+# Resolva uma equação do 2º grau:
+# ax² + bx + c = 0
+# Informar:
+# nenhuma raiz
+# uma raiz
+# duas raízes
+
 def resolverEquacaoSegundoGrau():
     A = float(input("Digite o valor de A: "))
     B = float(input("Digite o valor de B: "))
@@ -514,50 +728,7 @@ def resolverEquacaoSegundoGrau():
             x1 = (-B + delta**0.5) / (2*A) #x1 = (-b + √Δ) / 2a   
             x2 = (-B - delta**0.5) / (2*A) #x2 = (-b - √Δ) / 2a 
             print(f"A equação tem duas raízes reais: {x1} e {x2}")
-
-
-# Programas com menu
-
-# 31.
-# Faça uma função com menu que reúna os exercícios 4 a 15 (conversões de temperatura).
-
-# 32.
-# Faça uma função com menu que reúna os exercícios 16 a 21 (perímetros).
-
-# 33.
-# Faça uma função com menu que reúna os exercícios 22 a 28 (áreas).
-
-# Valelifações
-
-# 34.elif Crie uma função que receba horas, minutos e segundos
-# e veique se formam um horário válido.
-# 35.
-# Crie uma função que receba 3 segmentos de reta
-# e verifique se podem formar um triângulo.
-
-# 36.
-# Se puder formar um triângulo, classifique:
-# Equilátero (3 lados iguais)
-# Isósceles (2 lados iguais)
-# Escaleno (todos diferentes)
-
-# 37.
-# Verifique se 3 ângulos podem formar um triângulo.
-
-# 38.
-# Classifique o triângulo pelos ângulos:
-# Acutângulo (todos < 90°)
-# Retângulo (um = 90°)
-# Obtusângulo (um > 90°)
-
-# 39.
-# Resolva uma equação do 2º grau:
-# ax² + bx + c = 0
-# Informar:
-# nenhuma raiz
-# uma raiz
-# duas raízes
-
+    
 # 40.
 # Crie uma função que verifique se uma data é válida.
 # Entradas: dia, mês, ano
