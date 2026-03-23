@@ -6,22 +6,42 @@
 # informando-os em seguida em ordem crescente.
 
 def ordenar2NumerosEmCrescente():
-    num1 = float(input("Digite o primeiro valor: "))
-    num2 = float(input("Digite o segundo valor: "))
+    try:
+        num1 = float(input("Digite o primeiro valor: "))
+    except ValueError:
+        print("Entrada inválida. Por favor, digite um número válido.")
+        return
+    try:
+        num2 = float(input("Digite o segundo valor: "))
+    except ValueError:
+        print("Entrada inválida. Por favor, digite um número válido.")
+        return
     if num1 <= num2:
         print(f"Valores em ordem crescente: {num1}, {num2}")
     else:
         print(f"Valores em ordem crescente: {num2}, {num1}")
-              
+                
 
 # 2.
 # Faça uma função em Python que solicite a digitação de três valores quaisquer,
 # informando-os em seguida em ordem crescente.
 #Usando apenas if e elif, sem usar listas, tuplas ou funções prontas de ordenação.
 def ordenar3NumerosEmCrescente():
-    num1 = float(input("Digite o primeiro valor: "))
-    num2 = float(input("Digite o segundo valor: "))
-    num3 = float(input("Digite o terceiro valor: "))
+    try:
+        num1 = float(input("Digite o primeiro valor: "))
+    except ValueError:
+        print("Entrada inválida. Por favor, digite um número válido.")
+        return
+    try:
+        num2 = float(input("Digite o segundo valor: "))
+    except ValueError:
+        print("Entrada inválida. Por favor, digite um número válido.")
+        return
+    try:
+        num3 = float(input("Digite o terceiro valor: "))
+    except ValueError:
+        print("Entrada inválida. Por favor, digite um número válido.")
+        return
     if num1 <= num2 <= num3:
         print(f"Valores em ordem crescente: {num1}, {num2}, {num3}")
     elif num1 <= num3 <= num2:
@@ -40,10 +60,26 @@ def ordenar3NumerosEmCrescente():
 # Faça uma função em Python que solicite a digitação de quatro valores quaisquer,
 # informando-os em seguida em ordem crescente.
 def ordenadr4NumerosEmCrescente():
-    num1 = float(input("Digite o primeiro valor: "))
-    num2 = float(input("Digite o segundo valor: "))
-    num3 = float(input("Digite o terceiro valor: "))
-    num4 = float(input("Digite o quarto valor: "))
+    try:
+        num1 = float(input("Digite o primeiro valor: "))
+    except ValueError:
+        print("Entrada inválida. Por favor, digite um número válido.")
+        return
+    try:
+        num2 = float(input("Digite o segundo valor: "))
+    except ValueError:
+        print("Entrada inválida. Por favor, digite um número válido.")
+        return
+    try:
+        num3 = float(input("Digite o terceiro valor: "))
+    except ValueError:
+        print("Entrada inválida. Por favor, digite um número válido.")
+        return
+    try:
+        num4 = float(input("Digite o quarto valor: "))
+    except ValueError:
+        print("Entrada inválida. Por favor, digite um número válido.")
+        return
     if num1 <= num2 <= num3 <= num4:
         print(f"Valores em ordem crescente: {num1}, {num2}, {num3}, {num4}")
     elif num1 <= num2 <= num4 <= num3:
@@ -95,17 +131,28 @@ def ordenadr4NumerosEmCrescente():
 
 #Usando listas e a função sorted:
 def ordenar4NumerosEmCrescenteComSorted():
-    numeros = [
-        float(input("Digite o primeiro valor: ")),
-        float(input("Digite o segundo valor: ")),
-        float(input("Digite o terceiro valor: ")),
-        float(input("Digite o quarto valor: "))
-    ]
-    ordenados = sorted(numeros)
-    print("Valores em ordem crescente:", ordenados)
+    try:
+        numeros = [
+            float(input("Digite o primeiro valor: ")),
+            float(input("Digite o segundo valor: ")),
+            float(input("Digite o terceiro valor: ")),
+            float(input("Digite o quarto valor: "))
+        ]
+    except ValueError:
+        print("Entrada inválida. Por favor, digite apenas números.")
+        return
+
+    print("Valores em ordem crescente:", sorted(numeros))
 #Com for
 def ordenar4NumerosEmCrescenteComFor():
-    print(sorted([float(input(f"Digite o {i}º valor: ")) for i in range(1, 5)])) #pq se nao fica "Digite o 0º valor: "
+    try:
+        numeros = [float(input(f"Digite o {i}º valor: ")) for i in range(1, 5)] #pq se nao fica "Digite o 0º valor: "
+    except ValueError:
+        print("Entrada inválida. Por favor, digite apenas números.")
+        return
+
+    print("Valores em ordem crescente:", sorted(numeros))
+
 
 # Conversões de temperatura
 
@@ -139,7 +186,6 @@ def fahrenheitToCelcius():
     except ValueError:
         print("Entrada inválida. Por favor, digite um número válido.")
         return
-
     if f < -459.67:
         print("Temperatura inválida. A menor temperatura possível em Fahrenheit é -459.67.")
     else:
@@ -158,7 +204,6 @@ def celciusToKelvin():
     except ValueError:
         print("Entrada inválida. Por favor, digite um número válido.")
         return
-
     if c < -273.15:
         print("Temperatura inválida. A menor temperatura possível em Celsius é -273.15.")
     else:
@@ -176,7 +221,6 @@ def kelvinToCelcius():
     except ValueError:
         print("Entrada inválida. Por favor, digite um número válido.")
         return
-
     if k < 0:
         print("Temperatura inválida. A menor temperatura possível em Kelvin é 0.")
     else:
@@ -193,7 +237,6 @@ def celciusToRankine():
     except ValueError:
         print("Entrada inválida. Por favor, digite um número válido.")
         return
-
     if c < -273.15:
         print("Temperatura inválida. A menor temperatura possível em Celsius é -273.15.")
     else:
@@ -211,7 +254,6 @@ def rankineToCelcius():
     except ValueError:
         print("Entrada inválida. Por favor, digite um número válido.")
         return
-
     if r < 0:
         print("Temperatura inválida. A menor temperatura possível em Rankine é 0.")
     else:
@@ -226,7 +268,6 @@ def fahrenheitToKelvin():
     except ValueError:
         print("Entrada inválida. Por favor, digite um número válido.")
         return
-
     if f < -459.67:
         print("Temperatura inválida. A menor temperatura possível em Fahrenheit é -459.67.")
     else:
@@ -242,7 +283,6 @@ def kelvinToFahrenheit():
     except ValueError:
         print("Entrada inválida. Por favor, digite um número válido.")
         return
-
     if k < 0:
         print("Temperatura inválida. A menor temperatura possível em Kelvin é 0.")
     else:
@@ -258,7 +298,6 @@ def fahrenheitToRankine():
     except ValueError:
         print("Entrada inválida. Por favor, digite um número válido.")
         return
-
     if f < -459.67:
         print("Temperatura inválida. A menor temperatura possível em Fahrenheit é -459.67.")
     else:
@@ -274,7 +313,6 @@ def rankineToFahrenheit():
     except ValueError:
         print("Entrada inválida. Por favor, digite um número válido.")
         return
-
     if r < 0:
         print("Temperatura inválida. A menor temperatura possível em Rankine é 0.")
     else:
@@ -289,7 +327,6 @@ def kelvinToRankine():
     except ValueError:
         print("Entrada inválida. Por favor, digite um número válido.")
         return
-
     if k < 0:
         print("Temperatura inválida. A menor temperatura possível em Kelvin é 0.")
     else:
@@ -305,7 +342,6 @@ def rankineToKelvin():
     except ValueError:
         print("Entrada inválida. Por favor, digite um número válido.")
         return
-
     if r < 0:
         print("Temperatura inválida. A menor temperatura possível em Rankine é 0.")
     else:
@@ -319,9 +355,21 @@ def rankineToKelvin():
 # Faça uma função em Python que calcule o perímetro de um triângulo.
 # Entradas: lado A, lado B, lado C
 def perimetroTriangulo():
-    a = float(input("Digite o lado A do triângulo: "))
-    b = float(input("Digite o lado B do triângulo: "))
-    c = float(input("Digite o lado C do triângulo: "))
+    try:
+        a = float(input("Digite o lado A do triângulo: "))
+    except ValueError:
+        print("Entrada inválida. Por favor, digite um número válido.")
+        return
+    try:
+        b = float(input("Digite o lado B do triângulo: "))
+    except ValueError:
+        print("Entrada inválida. Por favor, digite um número válido.")
+        return
+    try:
+        c = float(input("Digite o lado C do triângulo: "))
+    except ValueError:
+        print("Entrada inválida. Por favor, digite um número válido.")
+        return
     if a <= 0 or b <= 0 or c <= 0:
         print("Os lados do triângulo devem ser valores positivos.")
     else:
@@ -332,7 +380,11 @@ def perimetroTriangulo():
 # Faça uma função em Python que calcule o perímetro de um quadrado/losango.
 # Entrada: lado L
 def perimetroQuadrado():
-    lado = float(input("Digite o lado do quadrado/losango: "))
+    try:
+        lado = float(input("Digite o lado do quadrado/losango: "))
+    except ValueError:
+        print("Entrada inválida. Por favor, digite um número válido.")
+        return
     if lado <= 0:
         print("O lado do quadrado/losango deve ser um valor positivo.")
     else:
@@ -343,41 +395,105 @@ def perimetroQuadrado():
 # Faça uma função em Python que calcule o perímetro de um retângulo/paralelogramo.
 # Entradas: lado menor (m) e lado maior (M)
 def perimetroRetanguloOuParalelogramo():
-    m = float(input("Digite o lado menor do retângulo/paralelogramo: "))
-    M = float(input("Digite o lado maior do retângulo/paralelogramo: "))
-    if m > M or m <= 0 or M <= 0 or m == 0 or M == 0:
-        print("Valores inválidos. Os lados devem ser positivos e o lado menor não pode ser maior que o lado maior. E os lados nao podem ser iguais") 
-    #especificamente nesse caso o tudo bem o lado menor ser maior que o lado maior, mas melhor fazer direito né
+    try:
+        m = float(input("Digite o lado menor do retângulo/paralelogramo: "))
+    except ValueError:
+        print("Entrada inválida. Por favor, digite um número válido.")
     else:
-        perimetro = 2 * (m + M)
-        print(f"O perímetro do retângulo/paralelogramo é: {perimetro}")
-
+        try:
+            M = float(input("Digite o lado maior do retângulo/paralelogramo: "))
+        except ValueError:
+            print("Entrada inválida. Por favor, digite um número válido.")
+            return
+        if m <= 0:
+            print("O lado menor deve ser positivo.")
+        else:
+            if M <= 0:
+                print("O lado maior deve ser positivo.")
+            else:
+                if m > M:
+                    print("O lado menor não pode ser maior que o lado maior.")
+                else:
+                    perimetro = 2 * (m + M)
+                    print(f"O perímetro do retângulo/paralelogramo é: {perimetro}")
 # 19.
 # Faça uma função em Python que calcule o perímetro de um trapézio.
 # Entradas: lado paralelo menor (m), lado paralelo maior (M) e outro lado (O) 
 #Se for um trapézio isósceles, os outros dois lados são iguais, ou seja, O = O2. 
-def perimetroTrapezioIsoseleces():
-    m = float(input("Digite o lado paralelo menor do trapézio: "))
-    M = float(input("Digite o lado paralelo maior do trapézio: "))
-    o = float(input("Digite o outro lado do trapézio: "))
-    if m <= 0 or M <= 0 or o <= 0 or M <= m or m == o or M == o:
-        print("Valores inválidos. Os lados devem ser positivos, o lado paralelo maior deve ser maior que o lado paralelo menor, e os lados nao podem ser iguais.")
+def perimetroTrapezioIsosceles():
+    try:
+        m = float(input("Digite o lado paralelo menor do trapézio: "))
+    except ValueError:
+        print("Entrada inválida. Por favor, digite um número válido.")
+        return
+    try:
+        M = float(input("Digite o lado paralelo maior do trapézio: "))
+    except ValueError:
+        print("Entrada inválida. Por favor, digite um número válido.")
+        return
+    try:
+        o = float(input("Digite o outro lado do trapézio: "))
+    except ValueError:
+        print("Entrada inválida. Por favor, digite um número válido.")
+        return
+    if m <= 0:
+        print("O lado paralelo menor deve ser positivo.")
     else:
-        perimetro = m + M + 2 * o
-        print(f"O perímetro do trapézio é: {perimetro}")
+        if M <= 0:
+            print("O lado paralelo maior deve ser positivo.")
+        else:
+            if o <= 0:
+                print("O lado oblíquo deve ser positivo.")
+            else:
+                if M <= m:
+                    print("O lado paralelo maior deve ser maior que o lado paralelo menor.")
+                else:
+                    if m == o or M == o:
+                        print("O lado oblíquo não pode ser igual aos lados paralelos.")
+                    else:
+                        p = m + M + 2 * o
+                        print(f"O perímetro do trapézio é: {p}")
+
 
 #Se for um trapézio escaleno, os outros dois lados são diferentes
 def perimetroTrapezioEscaleno():
-    m = float(input("Informe a base menor (m): "))
-    M = float(input("Informe a base maior (M): "))
-    o1 = float(input("Informe o lado não paralelo 1 (o1): "))
-    o2 = float(input("Informe o lado não paralelo 2 (o2): "))
-    
-    if m <= 0 or M <= 0 or o1 <= 0 or o2 <= 0 or M <= m or m == o1 or m == o2 or M == o1 or M == o2 or o1 == o2:
-        print("Valores inválidos. Os lados devem ser positivos, o lado paralelo maior deve ser maior que o lado paralelo menor, e os lados nao podem ser iguais.")
+    try:
+        m = float(input("Informe a base menor (m): "))
+    except ValueError:
+        print("Entrada inválida. Por favor, digite um número válido.")
+        return
+    try:
+        M = float(input("Informe a base maior (M): "))
+    except ValueError:
+        print("Entrada inválida. Por favor, digite um número válido.")
+        return
+    try:
+        o1 = float(input("Informe o lado não paralelo 1 (o1): "))
+    except ValueError:
+        print("Entrada inválida. Por favor, digite um número válido.")
+        return
+    try:
+        o2 = float(input("Informe o lado não paralelo 2 (o2): "))
+    except ValueError:
+        print("Entrada inválida. Por favor, digite um número válido.")
+        return
+    if m <= 0:
+        print("A base menor deve ser positiva.")
     else:
-        perimetro = m + M + o1 + o2
-        print(f"O perímetro do trapézio é: {perimetro}")
+        if M <= 0:
+            print("A base maior deve ser positiva.")
+        else:
+            if o1 <= 0 or o2 <= 0:
+                print("Os lados não paralelos devem ser positivos.")
+            else:
+                if M <= m:
+                    print("O lado paralelo maior deve ser maior que o lado paralelo menor.")
+                else:
+                    if m == o1 or m == o2 or M == o1 or M == o2 or o1 == o2:
+                        print("Os lados não podem ser iguais.")
+                    else:
+                        p = m + M + o1 + o2
+                        print(f"O perímetro do trapézio é: {p}")
 
 
 
@@ -385,8 +501,16 @@ def perimetroTrapezioEscaleno():
 # Faça uma função em Python que calcule o perímetro de um polígono regular.
 # Entradas: quantidade de lados (Q) e tamanho do lado
 def perimetroPoligonoRegular():
-    Q = int(input("Digite a quantidade de lados do polígono regular: "))
-    tamanho = float(input("Digite o tamanho do lado do polígono regular: "))
+    try:
+        Q = int(input("Digite a quantidade de lados do polígono regular: "))
+    except ValueError:
+        print("Entrada inválida. Por favor, digite um número válido.")
+        return
+    try:
+        tamanho = float(input("Digite o tamanho do lado do polígono regular: "))
+    except ValueError:
+        print("Entrada inválida. Por favor, digite um número válido.")
+        return
     if Q < 3:
         print("Um polígono regular deve ter pelo menos 3 lados.")
     elif tamanho <= 0:
@@ -401,7 +525,11 @@ def perimetroPoligonoRegular():
 # Fórmula: Perímetro = 2 × π × R
 # π ≈ 3.1415
 def perimetroCirculo():
-    R = float(input("Digite o raio do círculo: "))
+    try:
+        R = float(input("Digite o raio do círculo: "))
+    except ValueError:
+        print("Entrada inválida. Por favor, digite um número válido.")
+        return
     if R <= 0:
         print("O raio do círculo deve ser um valor positivo.")
     else:
@@ -415,35 +543,61 @@ def perimetroCirculo():
 # Entradas: base (B) e altura (A)
 # Fórmula: Área = (B × A) / 2
 def areaTriangulo():
-    B = float(input("Digite a base do triângulo: "))
-    A = float(input("Digite a altura do triângulo: "))
-    if B <= 0 or A <= 0:
-        print("A base e a altura do triângulo devem ser valores positivos.")
+    try:
+        B = float(input("Digite a base do triângulo: "))
+    except ValueError:
+        print("Entrada inválida. Por favor, digite um número válido.")
+        return
+    try:
+        A = float(input("Digite a altura do triângulo: "))
+    except ValueError:
+        print("Entrada inválida. Por favor, digite um número válido.")
+        return
+    if B <= 0 :
+        print("A base   do triângulo devem ser valores positivos.")
+    elif A <= 0:
+        print("A altura do triângulo deve ser um valor positivo.")
     else:
-        area = (B * A) / 2
-        print(f"A área do triângulo é: {area}")
+        a = (B * A) / 2
+        print(f"A área do triângulo é: {a}")
 
 # 23.
 # Área de um quadrado
 # Entrada: lado (L)
 # Fórmula: Área = L²
 def areaQuadrado():
-    L = float(input("Digite o lado do quadrado: "))
+    try:
+        L = float(input("Digite o lado do quadrado: "))
+    except ValueError:
+        print("Entrada inválida. Por favor, digite um número válido.")
+        return
     if L <= 0:
         print("O lado do quadrado deve ser um valor positivo.")
     else:
-        area = L ** 2 #Ou area = L * L
-        print(f"A área do quadrado é: {area}")
+        a = L ** 2 #Ou a = L * L
+        print(f"A área do quadrado é: {a}")
 
 # 24.
 # Área de um retângulo
 # Entradas: lado menor (m) e lado maior (M)
 # Fórmula: Área = m × M
 def areaRetangulo():
-    m = float(input("Digite o lado menor do retângulo: "))
-    M = float(input("Digite o lado maior do retângulo: "))
-    if m <= 0 or M <= 0 or M <= m:
-        print("Valores inválidos. Os lados devem ser positivos e o lado maior deve ser maior que o lado menor.")
+    try:
+        m = float(input("Digite o lado menor do retângulo: "))
+    except ValueError:
+        print("Entrada inválida. Por favor, digite um número válido.")
+        return
+    try:
+        M = float(input("Digite o lado maior do retângulo: "))
+    except ValueError:
+        print("Entrada inválida. Por favor, digite um número válido.")
+        return
+    if m <= 0:
+        print("O lado menor do retângulo deve ser um valor positivo.")
+    elif M <= 0:
+        print("O lado maior do retângulo deve ser um valor positivo.")
+    elif M <= m:
+        print("O lado maior do retângulo deve ser maior que o lado menor.")
     else:
         area = m * M
         print(f"A área do retângulo é: {area}")
@@ -453,10 +607,20 @@ def areaRetangulo():
 # Entradas: diagonal menor (d) e diagonal maior (D)
 # Fórmula: Área = (d × D) / 2
 def areaLosango():
-    d = float(input("Digite a diagonal menor do losango: "))
-    D = float(input("Digite a diagonal maior do losango: "))
-    if d <= 0 or D <= 0 or D <= d:
-        print("Valores inválidos. As diagonais devem ser positivas e a diagonal maior deve ser maior que a diagonal menor.")
+    try:
+        d = float(input("Digite a diagonal menor do losango: "))
+    except ValueError:
+        print("Entrada inválida. Por favor, digite um número válido.")
+        return
+    try:
+        D = float(input("Digite a diagonal maior do losango: "))
+    except ValueError:
+        print("Entrada inválida. Por favor, digite um número válido.")
+        return
+    if d <= 0 or D <= 0:
+        print("Valores inválidos. As diagonais devem ser positivas.")
+    elif D <= d:
+        print("Valores inválidos. A diagonal maior deve ser maior que a diagonal menor.")
     else:
         area = (d * D) / 2
         print(f"A área do losango é: {area}")
@@ -466,9 +630,21 @@ def areaLosango():
 # Entradas: base menor (b), base maior (B) e altura (A)
 # Fórmula: Área = ((b + B) × A) / 2
 def areaTrapezio():
-    b = float(input("Digite a base menor do trapézio: "))
-    B = float(input("Digite a base maior do trapézio: "))
-    A = float(input("Digite a altura do trapézio: "))
+    try:
+        b = float(input("Digite a base menor do trapézio: "))
+    except ValueError:
+        print("Entrada inválida. Por favor, digite um número válido.")
+        return
+    try:
+        B = float(input("Digite a base maior do trapézio: "))
+    except ValueError:
+        print("Entrada inválida. Por favor, digite um número válido.")
+        return
+    try:
+        A = float(input("Digite a altura do trapézio: "))
+    except ValueError:
+        print("Entrada inválida. Por favor, digite um número válido.")
+        return
     if b <= 0 or B <= 0 or A <= 0 or B <= b:
         print("Valores inválidos. As bases e a altura devem ser positivas, e a base maior deve ser maior que a base menor.")
     else:
@@ -480,9 +656,21 @@ def areaTrapezio():
 # Entradas: número de lados (Q), base (B) e apótema (A)
 # Fórmula: Área = (Q × B × A) / 2
 def areaPoligonoRegular():
-    Q = int(input("Digite o número de lados do polígono regular: "))
-    B = float(input("Digite a base do polígono regular: "))
-    A = float(input("Digite a apótema do polígono regular: "))
+    try:
+        Q = int(input("Digite o número de lados do polígono regular: "))
+    except ValueError:
+        print("Entrada inválida. Por favor, digite um número válido.")
+        return
+    try:
+        B = float(input("Digite a base do polígono regular: "))
+    except ValueError:
+        print("Entrada inválida. Por favor, digite um número válido.")
+        return
+    try:
+        A = float(input("Digite a apótema do polígono regular: "))
+    except ValueError:
+        print("Entrada inválida. Por favor, digite um número válido.")
+        return
     if Q < 3:
         print("Um polígono regular deve ter pelo menos 3 lados.")
     elif B <= 0 or A <= 0:
@@ -496,7 +684,11 @@ def areaPoligonoRegular():
 # Entrada: raio (R)
 # Fórmula: Área = π × R²
 def areaCirculo():
-    R = float(input("Digite o raio do círculo: "))
+    try:
+        R = float(input("Digite o raio do círculo: "))
+    except ValueError:
+        print("Entrada inválida. Por favor, digite um número válido.")
+        return
     if R <= 0:
         print("O raio do círculo deve ser um valor positivo.")
     else:
@@ -510,8 +702,16 @@ def areaCirculo():
 # Entradas: peso (kg) e altura (m)
 # Fórmula: IMC = peso / altura²
 def calcularIMC():
-    peso = float(input("Digite o peso em kg: "))
-    altura = float(input("Digite a altura em metros: "))
+    try:
+        peso = float(input("Digite o peso em kg: "))
+    except ValueError:
+        print("Entrada inválida. Por favor, digite um número válido.")
+        return
+    try:
+        altura = float(input("Digite a altura em metros: "))
+    except ValueError:
+        print("Entrada inválida. Por favor, digite um número válido.")
+        return
     if peso <= 0 or altura <= 0:
         print("Peso e altura devem ser valores positivos.")
     else:
@@ -524,8 +724,16 @@ def calcularIMC():
 # Forma: AX + B = 0
 # Entradas: A e B
 def resolverEquacaoPrimeiroGrau():
-    A = float(input("Digite o valor de A: "))
-    B = float(input("Digite o valor de B: "))
+    try:
+        A = float(input("Digite o valor de A: "))
+    except ValueError:
+        print("Entrada inválida. Por favor, digite um número válido.")
+        return
+    try:
+        B = float(input("Digite o valor de B: "))
+    except ValueError:
+        print("Entrada inválida. Por favor, digite um número válido.")
+        return
     if A == 0:
         if B == 0:
             print("A equação tem infinitas soluções.") #qlquer numero vezes 0 = 0
@@ -541,7 +749,11 @@ def resolverEquacaoPrimeiroGrau():
 # A fórmula é: P * 0.035 = L (Litros de água por dia)
 #Entradas: P (peso em kg)
 def calcularLitrosAguaPorDia():
-    P = float(input("Digite o peso em kg: "))
+    try:
+        P = float(input("Digite o peso em kg: "))
+    except ValueError:
+        print("Entrada inválida. Por favor, digite um número válido.")
+        return
     if P <= 0:
         print("O peso deve ser um valor positivo.")
     else:
@@ -567,7 +779,6 @@ def menuConversaoTemperatura():
         print("11. Kelvin para Rankine")
         print("12. Rankine para Kelvin")
         print("0. Sair")
-        
         opcao = input("Escolha uma opção: ")
         try:
             if opcao == "1":
@@ -602,20 +813,22 @@ def menuConversaoTemperatura():
             print(f"Ocorreu um erro: {e}. Tente novamente.")
 # 32.
 # Faça uma função com menu que reúna os exercícios 16 a 21 (perímetros).
+# 32.
+# Faça uma função com menu que reúna os exercícios 16 a 21 (perímetros).
 def menuPerimetros():
-    while True:
-        print("\n=== MENU DE PERÍMETROS ===")
-        print("1. Perímetro de um Triângulo")
-        print("2. Perímetro de um Quadrado/Losango")
-        print("3. Perímetro de um Retângulo/Paralelogramo")
-        print("4. Perímetro de um Trapézio Isósceles")
-        print("5. Perímetro de um Trapézio Escaleno")
-        print("6. Perímetro de um Polígono Regular")
-        print("7. Perímetro de um Círculo")
-        print("0. Sair")
-        
-        opcao = input("Escolha uma opção: ")
-        
+    print("\n=== MENU DE PERÍMETROS ===")
+    print("1. Perímetro de um Triângulo")
+    print("2. Perímetro de um Quadrado/Losango")
+    print("3. Perímetro de um Retângulo/Paralelogramo")
+    print("4. Perímetro de um Trapézio Isósceles")
+    print("5. Perímetro de um Trapézio Escaleno")
+    print("6. Perímetro de um Polígono Regular")
+    print("7. Perímetro de um Círculo")
+    print("0. Sair")
+
+    opcao = input("Escolha uma opção: ")
+
+    try:
         if opcao == "1":
             perimetroTriangulo()
         elif opcao == "2":
@@ -623,7 +836,7 @@ def menuPerimetros():
         elif opcao == "3":
             perimetroRetanguloOuParalelogramo()
         elif opcao == "4":
-            perimetroTrapezioIsoseleces()
+            perimetroTrapezioIsosceles()
         elif opcao == "5":
             perimetroTrapezioEscaleno()
         elif opcao == "6":
@@ -632,26 +845,27 @@ def menuPerimetros():
             perimetroCirculo()
         elif opcao == "0":
             print("Saindo do menu...")
-            break
         else:
             print("Opção inválida! Tente novamente.")
+    except ValueError:
+        print("Erro: valor inválido informado.")
 
 # 33.
 # Faça uma função com menu que reúna os exercícios 22 a 28 (áreas).
 def menuAreas():
-    while True:
-        print("\n=== MENU DE ÁREAS ===")
-        print("1. Área de um Triângulo")
-        print("2. Área de um Quadrado")
-        print("3. Área de um Retângulo")
-        print("4. Área de um Losango")
-        print("5. Área de um Trapézio")
-        print("6. Área de um Polígono Regular")
-        print("7. Área de um Círculo")
-        print("0. Sair")
-        
-        opcao = input("Escolha uma opção: ")
-        
+    print("\n=== MENU DE ÁREAS ===")
+    print("1. Área de um Triângulo")
+    print("2. Área de um Quadrado")
+    print("3. Área de um Retângulo")
+    print("4. Área de um Losango")
+    print("5. Área de um Trapézio")
+    print("6. Área de um Polígono Regular")
+    print("7. Área de um Círculo")
+    print("0. Sair")
+
+    opcao = input("Escolha uma opção: ")
+
+    try:
         if opcao == "1":
             areaTriangulo()
         elif opcao == "2":
@@ -668,25 +882,10 @@ def menuAreas():
             areaCirculo()
         elif opcao == "0":
             print("Saindo do menu...")
-            break
         else:
             print("Opção inválida! Tente novamente.")
-
-# Valelifações
-
-# 34.elif Crie uma função que receba horas, minutos e segundos
-# e veique se formam um horário válido.
-def verifcarHorarioValido():
-    horas = int(input("Digite as horas: "))
-    minutos = int(input("Digite os minutos: "))
-    segundos = int(input("Digite os segundos: "))
-
-    if 0 <= horas <= 23 and 0 <= minutos <= 59 and 0 <= segundos <= 59:
-        print("Horário válido.")
-    else:
-        print("Horário inválido.")
-        
-        
+    except ValueError:
+        print("Erro: valor inválido informado.")
         
 # Faça um programa em Python que solicite a digitação de três valores representando,
 # respectivamente, as horas, os minutos e os segundos de um horário, verificando, a seguir se os
@@ -738,13 +937,11 @@ def adicionarSegundosEmHorario():
                                     print(f"O novo horário é: {novaHora:02d}:{novaMinuto:02d}:{novaSegundo:02d}")
                                         
 
-
 #um relogio que funciona e e atualizado em tempo real no terminal
 def relogio():
-    import time
-    
+    import time   
     while True:
-        print(time.strftime("%H:%M:%S"), end="\r")
+        print(time.strftime("%H:%M:%S"), end="\r") #\r faz o cursor voltar pro inicio da linha, entao o proximo print vai sobrescrever o anterior, e ai fica parecendo que o relogio ta funcionando
         time.sleep(1)
         
 
@@ -752,9 +949,21 @@ def relogio():
 # Crie uma função que receba 3 segmentos de reta
 # e verifique se podem formar um triângulo.
 def verificarSeFormarTrianguloComSegmentos():
-    a = float(input("Digite o comprimento do primeiro segmento: "))
-    b = float(input("Digite o comprimento do segundo segmento: "))
-    c = float(input("Digite o comprimento do terceiro segmento: "))
+    try:
+        a = float(input("Digite o comprimento do primeiro segmento: "))
+    except ValueError:
+        print("Entrada inválida. Por favor, digite um número válido.")
+        return
+    try:
+        b = float(input("Digite o comprimento do segundo segmento: "))
+    except ValueError:
+        print("Entrada inválida. Por favor, digite um número válido.")
+        return
+    try:
+        c = float(input("Digite o comprimento do terceiro segmento: "))
+    except ValueError:
+        print("Entrada inválida. Por favor, digite um número válido.")
+        return
 
     if a + b > c and a + c > b and b + c > a:
         print("Os segmentos podem formar um triângulo.")
@@ -769,9 +978,21 @@ def verificarSeFormarTrianguloComSegmentos():
 # Escaleno (todos diferentes)
 
 def classificarTriangulo():
-    a = float(input("Digite o comprimento do primeiro lado: "))
-    b = float(input("Digite o comprimento do segundo lado: "))
-    c = float(input("Digite o comprimento do terceiro lado: "))
+    try:
+        a = float(input("Digite o comprimento do primeiro lado: "))
+    except ValueError:
+        print("Entrada inválida. Por favor, digite um número válido.")
+        return
+    try:
+        b = float(input("Digite o comprimento do segundo lado: "))
+    except ValueError:
+        print("Entrada inválida. Por favor, digite um número válido.")
+        return
+    try:
+        c = float(input("Digite o comprimento do terceiro lado: "))
+    except ValueError:
+        print("Entrada inválida. Por favor, digite um número válido.")
+        return
 
     if a == b == c:
         print("O triângulo é equilátero.")
@@ -783,10 +1004,21 @@ def classificarTriangulo():
 # 37.
 # Verifique se 3 ângulos podem formar um triângulo.
 def verificarSeFormarTrianguloComAngulos():
-    angulo1 = float(input("Digite o primeiro ângulo: "))
-    angulo2 = float(input("Digite o segundo ângulo: "))
-    angulo3 = float(input("Digite o terceiro ângulo: "))
-
+    try:
+        angulo1 = float(input("Digite o primeiro ângulo: "))
+    except ValueError:
+        print("Entrada inválida. Por favor, digite um número válido.")
+        return
+    try:
+        angulo2 = float(input("Digite o segundo ângulo: "))
+    except ValueError:
+        print("Entrada inválida. Por favor, digite um número válido.")
+        return
+    try:
+        angulo3 = float(input("Digite o terceiro ângulo: "))
+    except ValueError:
+        print("Entrada inválida. Por favor, digite um número válido.")
+        return
     if angulo1 + angulo2 + angulo3 == 180:
         print("Os ângulos podem formar um triângulo.")
     else:
@@ -799,9 +1031,21 @@ def verificarSeFormarTrianguloComAngulos():
 # Retângulo (um = 90°)
 # Obtusângulo (um > 90°)
 def classificarTrianguloPorAngulos():
-    angulo1 = float(input("Digite o primeiro ângulo: "))
-    angulo2 = float(input("Digite o segundo ângulo: "))
-    angulo3 = float(input("Digite o terceiro ângulo: "))
+    try:
+        angulo1 = float(input("Digite o primeiro ângulo: "))
+    except ValueError:
+        print("Entrada inválida. Por favor, digite um número válido.")
+        return
+    try:
+        angulo2 = float(input("Digite o segundo ângulo: "))
+    except ValueError:
+        print("Entrada inválida. Por favor, digite um número válido.")
+        return
+    try:
+        angulo3 = float(input("Digite o terceiro ângulo: "))
+    except ValueError:
+        print("Entrada inválida. Por favor, digite um número válido.")
+        return
 
     if angulo1 < 90 and angulo2 < 90 and angulo3 < 90:
         print("O triângulo é acutângulo.")
@@ -819,9 +1063,22 @@ def classificarTrianguloPorAngulos():
 # duas raízes
 
 def resolverEquacaoSegundoGrau():
-    A = float(input("Digite o valor de A: "))
-    B = float(input("Digite o valor de B: "))
-    C = float(input("Digite o valor de C: "))
+    try:
+        A = float(input("Digite o valor de A: "))
+    except ValueError:
+        print("Entrada inválida. Por favor, digite um número válido.")
+        return
+    try:
+        B = float(input("Digite o valor de B: "))
+    except ValueError:
+        print("Entrada inválida. Por favor, digite um número válido.")
+        return
+    try:
+        C = float(input("Digite o valor de C: "))
+    except ValueError:
+        print("Entrada inválida. Por favor, digite um número válido.")
+        return
+
     if A == 0:
         print("A equação não é do 2º grau. Use a função para resolver equações do 1º grau.")
     else:
@@ -842,9 +1099,21 @@ def resolverEquacaoSegundoGrau():
 # Entradas: dia, mês, ano
 # Considerar meses de 30 e 31 dias, fevereiro e anos bissextos.
 def verificarDataValida():
-    dia = int(input("Digite o dia: "))
-    mes = int(input("Digite o mês: "))
-    ano = int(input("Digite o ano: "))
+    try:
+        dia = int(input("Digite o dia: "))
+    except ValueError:
+        print("Entrada inválida. Por favor, digite um número válido.")
+        return
+    try:
+        mes = int(input("Digite o mês: "))
+    except ValueError:
+        print("Entrada inválida. Por favor, digite um número válido.")
+        return
+    try:
+        ano = int(input("Digite o ano: "))
+    except ValueError:
+        print("Entrada inválida. Por favor, digite um número válido.")
+        return
 
     if mes < 1 or mes > 12:
         print("Mês inválido.")
