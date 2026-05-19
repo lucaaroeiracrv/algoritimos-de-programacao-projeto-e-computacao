@@ -44,3 +44,55 @@ excluido=dicio2.pop("Jose")
 print(dicio2)
 print(excluido)
 dicio2.pop("Maria")
+
+
+for pCardeal in ["norte", "sul", "leste", "oeste"]:
+    print(pCardeal)
+    
+for ord, pCardeal in enumerate(["norte", "sul", "leste", "oeste"]):
+    print(ord, pCardeal)
+    
+for ord, pCardeal in enumerate(["norte", "sul", "leste", "oeste"], start=1):
+    print(ord, pCardeal)
+
+for valor in range(10):
+    print(valor)
+
+for valor in range(3,7):
+    print(valor)
+    
+for valor in range(8, -1, -2):
+    print(valor)
+    
+    
+valor=0
+while valor<=15:
+    valor+=1
+    if valor>=5 and valor<=10:
+        continue
+    print(valor) 
+    
+valor=0
+while valor<=5:
+    valor+=1
+    print(valor)
+else:
+    print("o while terminou")
+valor=0
+
+
+while valor<=15:
+    valor+=1
+    if valor>=5 and valor<=10:
+        continue
+    print(valor) 
+    
+valor=0
+while valor<=5:
+    valor+=1
+    print(valor)
+print("o while terminou")
+
+for valor in [1, 2, 3, 4, 5]:
+    print(valor)
+print("for terminou")
